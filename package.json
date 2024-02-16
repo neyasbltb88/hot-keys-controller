@@ -6,6 +6,10 @@
     "module": "./dist/index.js",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/neyasbltb88/hot-keys-controller.git"
+    },
     "scripts": {
         "dev": "vite --open",
         "build": "vue-tsc && vite build --config vite.config.lib.ts && vite build && tsc --project tsconfig.build.json",
