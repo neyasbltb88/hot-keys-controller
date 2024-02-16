@@ -1,9 +1,9 @@
 import { IHotKeysControllerOptions } from './IHotKeysControllerOptions';
 import { IHotKeysControllerAction } from './IHotKeysControllerAction';
 
-import EventEmitter from '../EventEmitter';
-import extendOptionsWithDefault from '../extendOptionsWithDefault';
-import getElement from '../getElement';
+import EventEmitter from '@neyasbltb_88/event-emitter';
+import extendOptionsWithDefault from './extendOptionsWithDefault';
+import getElement from './getElement';
 import getEventName from './getEventName';
 
 const defaultOptions: Required<IHotKeysControllerOptions> = {
@@ -40,6 +40,7 @@ class HotKeysController extends EventEmitter {
         super();
 
         this._options = extendOptionsWithDefault(options, defaultOptions);
+        console.log('this._options: ', this._options);
 
         if (options.el) this._prepareElement(options.el);
         if (actions.length) this.setActions(actions);

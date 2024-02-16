@@ -7,7 +7,7 @@
  * @returns {Required<T>} Возвращает глубокую копию объекта options, дополненную полями из defaultOptions.
  */
 const extendOptionsWithDefault = <T extends object>(options: T, defaultOptions: Required<T>): Required<T> => {
-    return Object.assign({}, options, defaultOptions)
+    return Object.assign({}, defaultOptions, options);
 };
 
 export default extendOptionsWithDefault;

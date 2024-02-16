@@ -46,8 +46,18 @@
     </div>
 </template>
 
-<script lang="ts">
-import HotKeysController from '../utils/HotKeysController';
+<script>
+// import HotKeysController from '../utils/HotKeysController';
+
+// import * as HotKeysController from '../../index';
+
+// import HotKeysController from '../../index';
+// import * as HotKeysControllerAll from '../../index';
+import HotKeysController from '../../dist';
+// import * as HotKeysController from '../../dist/index.js';
+// import { HotKeysController } from '../../dist';
+
+// console.log('HotKeysControllerAll: ', HotKeysControllerAll);
 
 export default {
     name: 'ParentComponent',
