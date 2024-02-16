@@ -40,7 +40,6 @@ class HotKeysController extends EventEmitter {
         super();
 
         this._options = extendOptionsWithDefault(options, defaultOptions);
-        console.log('this._options: ', this._options);
 
         if (options.el) this._prepareElement(options.el);
         if (actions.length) this.setActions(actions);

@@ -1,6 +1,6 @@
 var c = Object.defineProperty;
 var _ = (s, t, e) => t in s ? c(s, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : s[t] = e;
-var h = (s, t, e) => (_(s, typeof t != "symbol" ? t + "" : t, e), e);
+var a = (s, t, e) => (_(s, typeof t != "symbol" ? t + "" : t, e), e);
 class p {
   /**
    * @class
@@ -121,7 +121,7 @@ class p {
 const v = (s, t) => Object.assign({}, t, s), m = (s) => typeof s == "string" ? document.querySelector(s) : (s != null && s.$el && typeof s.$el == "object" && (s = s.$el), typeof s == "object" && "addEventListener" in s ? s : null), y = (s) => {
   const t = /Key|Digit/;
   return s.replace(t, "");
-}, a = {
+}, h = {
   CTRL: "CTRL",
   SHIFT: "SHIFT",
   ALT: "ALT",
@@ -134,7 +134,7 @@ const v = (s, t) => Object.assign({}, t, s), m = (s) => typeof s == "string" ? d
 }, g = (s) => {
   let t = /* @__PURE__ */ new Set();
   const { ctrlKey: e, altKey: i, shiftKey: n, metaKey: o, code: r } = s;
-  o && t.add(a.META), e && t.add(a.CTRL), i && t.add(a.ALT), n && t.add(a.SHIFT);
+  o && t.add(h.META), e && t.add(h.CTRL), i && t.add(h.ALT), n && t.add(h.SHIFT);
   const l = y(r);
   let u = !1;
   for (const b of t) {
@@ -156,11 +156,11 @@ const v = (s, t) => Object.assign({}, t, s), m = (s) => typeof s == "string" ? d
 class w extends p {
   constructor(e = {}, i = []) {
     super();
-    h(this, "_options");
-    h(this, "_actions", []);
-    h(this, "_restoreTabindex", null);
-    h(this, "_isEnabled", !1);
-    h(this, "_onKeyDown", (e) => {
+    a(this, "_options");
+    a(this, "_actions", []);
+    a(this, "_restoreTabindex", null);
+    a(this, "_isEnabled", !1);
+    a(this, "_onKeyDown", (e) => {
       var n, o;
       const i = g(e);
       if (e.hotKey = i, this._options.debug) {
@@ -169,7 +169,7 @@ class w extends p {
       }
       ((n = this.events[i]) != null && n.size || (o = this.onceCallbacks[i]) != null && o.size) && (this.emit("action", i), e.preventDefault()), this.emit("keydown", e), this.emit(i, e);
     });
-    this._options = v(e, d), console.log("this._options: ", this._options), e.el && this._prepareElement(e.el), i.length && this.setActions(i), this._options.autoEnable && this.enable();
+    this._options = v(e, d), e.el && this._prepareElement(e.el), i.length && this.setActions(i), this._options.autoEnable && this.enable();
   }
   get isEnabled() {
     return this._isEnabled;
